@@ -2,6 +2,12 @@
   "name": "WebSpatial Starter",
   "start_url": "/",
   "display": "minimal-ui",
+  "xr_main_scene": {
+    "default_size": {
+      "width": 2000,
+      "height": 1500
+    }
+  },
   "icons": [
     {
       "src": "/icons/icon-192.png",

@@ -143,9 +143,11 @@ vite dev
 
 For spatial computing platforms with a [built-in WebSpatial Runtime](https://developer.picoxr.com/document/web/web-platform/) (for example, [PICO OS 6](https://developer.picoxr.com/document/discover/pico-os-6-overview/)):
 
-Just visit the current website URL in the [official simulator](https://developer.picoxr.com/document/spatial-toolkit/learn-about-pico-emulator/) or on a real device, let the site [run independently](https://developer.picoxr.com/document/web/install-free/) as a PWA, and you can see the spatialized UI effects and volumetric 3D content produced by WebSpatial.
+Just visit the current website URL in the PICO Browser on the [official simulator](https://developer.picoxr.com/document/spatial-toolkit/learn-about-pico-emulator/) or on a real PICO OS 6 device, then click the "Run as a standalone app" button in the address bar - the website will run as a [Web App with WebSpatial enabled](https://developer.picoxr.com/document/web/install-free/), and you can see the spatialized UI effects and volumetric 3D content produced by WebSpatial.
 
-> When previewing a URL served from a local computer on the PICO OS 6 simulator or on personally tested devices, the [URL is not required to use HTTPS](https://developer.picoxr.com/document/web/manifest/).
+> When previewing a local URL as a Web App on the PICO OS 6 simulator, the [URL is not required to use HTTPS](https://developer.picoxr.com/document/web/manifest/), and you need to use the default IP address `10.0.2.2`. For example, http://10.0.2.2:5173/
+>
+> Note: To access the Vite dev server via 10.0.2.2, you need to [set `server: { host: true }` in Vite](https://vitejs.dev/config/server-options) so it allows IPs beyond `localhost` or `127.0.0.1`.
 
 ### Packaged App Mode
 

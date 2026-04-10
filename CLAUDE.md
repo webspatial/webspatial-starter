@@ -11,6 +11,7 @@ If a deeper directory contains another instruction file, the deeper file wins.
 3. Use `docs/api/` as the primary API reference.
    - This is the main source for APIs of WebSpatial SDK.
    - Look up APIs by their exact category and name.
+   - Note that some APIs have been folded into certain docs as second-level headings.
 
 ## Sources To Avoid
 

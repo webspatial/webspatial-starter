@@ -5,13 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:webspatial": "npx webspatial-builder run --base=http://localhost:5174/",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
     "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+    "react-dom": "^19.2.4",
+    "@webspatial/core-sdk": "^1.4.0",
+    "@webspatial/react-sdk": "^1.4.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
@@ -19,6 +22,8 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
+    "@webspatial/builder": "^1.4.0",
+    "@webspatial/platform-visionos": "^1.4.0",
     "eslint": "^9.39.4",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.5.2",

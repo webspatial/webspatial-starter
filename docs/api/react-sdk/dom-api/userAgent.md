@@ -14,7 +14,7 @@ If the User Agent string matches `/WebSpatial\/(\S+)/`, the current runtime envi
 
 If the User Agent string matches `/\sVR\s/`, the current runtime environment supports WebXR.
 
-If the User Agent string matches `\swv\)`, the current Web Runtime is WebView.
+If the User Agent string matches `/\swv\)/`, the current Web Runtime is WebView.
 
 If the User Agent string matches `/WSAppShell\/(\S+)/`, the current runtime environment is a [Packaged WebSpatial App](../../../concepts/webspatial-app.md#packaged-webspatial-app) that includes WebSpatial Runtime. If it also matches `"Macintosh"`, the environment is visionOS.
 

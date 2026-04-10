@@ -1,6 +1,6 @@
 # Natural Interactions
 
-Natural interactions means that when users interact with software interfaces and virtual content in space, the interaction feels like manipulating real objects in the physical world. No control device such as an XR controller is used. Interaction relies only on hands and eyes in an intuitive and efficient way.
+Natural interactions mean that when users interact with software interfaces and virtual content in space, the interaction feels like manipulating real objects in the physical world. No control device such as an XR controller is used. Interaction relies only on hands and eyes in an intuitive and efficient way.
 
 There are two modes of natural interaction:
 

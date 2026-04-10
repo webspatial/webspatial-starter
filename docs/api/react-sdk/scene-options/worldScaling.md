@@ -50,5 +50,5 @@ Example of setting the initial scene through the Web App Manifest:
 
 ## Accepted Values
 
-- `"automatic"`: shows a larger-near smaller-far effect during movement, like a real-world object
+- `"automatic"`: shows a distance-based scaling effect during movement, like a real-world object
 - `"dynamic"`: keeps a constant size relative to the user's field of view during movement, just like the default behavior of a `window` Spatial Scene

@@ -98,7 +98,7 @@ The following 3D asset declarations can appear among the top-level children of `
 
 Transform props use the coordinate system of the local 3D space in front of the 2D plane corresponding to `<Reality>` by default, with the origin at the center point of that space. It uses a right-handed coordinate system, with Y pointing upward, Z pointing toward the user, and lengths expressed by default in the physical world unit (`m`) oriented toward real-world objects.
 
-> The depth of this space can be set with [`depth`](../api/react-sdk/css-api/depth.md) and the current depth can be queried with [`clientDepth`](../api/react-sdk/dom-api/clientDepth.md).
+> The depth of this space can be set with [`depth`](../css-api/depth.md) and the current depth can be queried with [`clientDepth`](../dom-api/clientDepth.md).
 
 For Entity nodes directly under `<World>`, the `position` value in Transform props is relative to the coordinate-system origin. For other Entity nodes used as children, the `position` value in Transform props is relative to the parent Entity's `position`.
 

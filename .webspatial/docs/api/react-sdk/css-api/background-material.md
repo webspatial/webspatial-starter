@@ -1,3 +1,8 @@
+<!--
+sidebar_position: 3
+description: 'Give scene and element backplates a transparent or real-time translucent material background.'
+-->
+
 # `background-material`
 
 ## Summary
@@ -30,8 +35,11 @@ For spatialized HTML elements, this adds such a translucent material backplate.
 
 ## Syntax
 
-Before standardization is complete, CSS properties in the WebSpatial API need the `-xr-` prefix.
-In the current implementation of WebSpatial SDK, for performance reasons, new CSS APIs are implemented through CSS custom properties, so the property name for `background-material` must be written as `--xr-background-material` both in CSS styles and in the `style` attribute.
+> [!CAUTION]
+> **Temporary prefixed CSS name**
+>
+> Before standardization is complete, CSS properties in the WebSpatial API need the `-xr-` prefix.
+> In the current implementation of WebSpatial SDK, for performance reasons, new CSS APIs are implemented through CSS custom properties, so the property name for `background-material` must be written as `--xr-background-material` both in CSS styles and in the `style` attribute.
 
 Example for the webpage window:
 

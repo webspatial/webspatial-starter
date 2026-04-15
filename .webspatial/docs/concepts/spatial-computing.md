@@ -1,3 +1,8 @@
+<!--
+sidebar_position: 1
+description: 'Learn how spatial computing differs from traditional XR, including spatial apps, runtimes, and unified rendering.'
+-->
+
 # Spatial Computing
 
 Spatial computing is a new capability of computing devices and operating systems. It is a further evolution of traditional XR devices and XR operating systems, including [virtual reality, mixed reality, and augmented reality](https://developer.picoxr.com/document/web/introduce-xr/).
@@ -10,13 +15,13 @@ A spatial computing operating system (Spatial OS) implements this integration be
 
 ## Unified Rendering
 
-The purpose of unified rendering is to let a Spatial OS perform [spatial computing](#spatial-computing) for different apps in a unified way, so the 2D and 3D content of multiple [spatial apps](#spatial-app) can coexist in the same space and share the same coordinate system and lighting environment, including effects such as spatial relationships, occlusion, and shadows.
+The purpose of unified rendering is to let a Spatial OS perform [spatial computing](./spatial-computing.md) for different apps in a unified way, so the 2D and 3D content of multiple [spatial apps](#spatial-app) can coexist in the same space and share the same coordinate system and lighting environment, including effects such as spatial relationships, occlusion, and shadows.
 
-To make this possible, each spatial app cannot render its own content in isolation or implement interactions arbitrarily. Instead, apps must provide content through [OS-managed 2D/3D content containers called spatial scenes](./spatial-scenes.md#spatial-scenes), and implement that content through [APIs the operating system can understand](./3d-content-containers.md#3d-engine-api). This allows the OS to understand app content as much as possible, perform unified rendering, and give that content consistent space-aware behavior and natural interaction capabilities.
+To make this possible, each spatial app cannot render its own content in isolation or implement interactions arbitrarily. Instead, apps must provide content through [OS-managed 2D/3D content containers called spatial scenes](./spatial-scenes.md), and implement that content through [APIs the operating system can understand](./3d-content-containers.md#3d-engine-api). This allows the OS to understand app content as much as possible, perform unified rendering, and give that content consistent space-aware behavior and natural interaction capabilities.
 
 ## Spatial Runtime
 
-To continuously perform [spatial computing](#spatial-computing) and [unified rendering](#unified-rendering), a Spatial OS needs to run a single 3D space and a single 3D rendering engine. This is effectively a runtime responsible for all [spatial apps](#spatial-app): all spatial apps run in that 3D space and are rendered by that engine.
+To continuously perform [spatial computing](./spatial-computing.md) and [unified rendering](#unified-rendering), a Spatial OS needs to run a single 3D space and a single 3D rendering engine. This is effectively a runtime responsible for all [spatial apps](#spatial-app): all spatial apps run in that 3D space and are rendered by that engine.
 
 When multiple spatial apps coexist, this 3D space is called Shared Space. When other spatial apps are hidden and the whole space is reserved for one app, it is called Full Space.
 
@@ -24,7 +29,7 @@ In Shared Space, spatial apps cannot access private data such as eye tracking, h
 
 ## Spatial App
 
-A spatial app is an app that runs in [Shared Space or Full Space](#spatial-runtime), is [rendered in a unified way](#unified-rendering) by the operating system, and automatically gains [spatial computing](#spatial-computing) capabilities.
+A spatial app is an app that runs in [Shared Space or Full Space](#spatial-runtime), is [rendered in a unified way](#unified-rendering) by the operating system, and automatically gains [spatial computing](./spatial-computing.md) capabilities.
 
 Spatial apps adopt the ["2D containing 3D"](./3d-content-containers.md#2d-containing-3d) development paradigm. Existing 2D apps, such as [Web Apps](./webspatial-app.md#web-app), can become spatial apps as long as they can use [new spatial computing APIs such as WebSpatial APIs](../introduction/getting-started.md#webspatial-api). Developers can add code where needed to let 2D content enter 3D space, add real volumetric 3D content mixed with 2D content, and make content support spatial interactions and integration with the surrounding space.
 

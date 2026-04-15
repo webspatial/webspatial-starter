@@ -1,3 +1,8 @@
+<!--
+sidebar_position: 1
+description: 'Inspect the current device, operating system, and whether the app is running in WebSpatial mode.'
+-->
+
 # `userAgent`
 
 ## Summary
@@ -6,7 +11,7 @@ Obtains information about the current device, operating system, and runtime envi
 
 ## Exposed On
 
-This property is available on the `Navigator` object.
+This property is available on the `navigator` object.
 
 ## Mental Model
 

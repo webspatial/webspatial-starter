@@ -1,3 +1,8 @@
+<!--
+sidebar_position: 4
+description: 'Set the depth of 3D container elements so they render with real thickness in space.'
+-->
+
 # `depth`
 
 ## Summary
@@ -20,8 +25,11 @@ Changing the depth of a 3D content container element also changes [the origin po
 
 ## Syntax
 
-Before standardization is complete, CSS properties in the WebSpatial API need the `-xr-` prefix.
-In the current implementation of WebSpatial SDK, for performance reasons, new CSS APIs are implemented through CSS custom properties, so the property name for `depth` must be written as `--xr-depth` both in CSS styles and in the `style` attribute.
+> [!CAUTION]
+> **Temporary prefixed CSS name**
+>
+> Before standardization is complete, CSS properties in the WebSpatial API need the `-xr-` prefix.
+> In the current implementation of WebSpatial SDK, for performance reasons, new CSS APIs are implemented through CSS custom properties, so the property name for `depth` must be written as `--xr-depth` both in CSS styles and in the `style` attribute.
 
 Examples:
 
@@ -87,6 +95,9 @@ The initial value is effectively:
 
 In the current implementation of WebSpatial SDK, `depth` is not yet supported inside CSS animations.
 
+> [!CAUTION]
+> **Current limitation**
+>
 > Spatialized HTML elements as a whole do not currently support CSS animations.
 
 `depth` does support JS-based animation approaches, where JS repeatedly updates the `--xr-depth` value in an element's `style`.

@@ -1,3 +1,8 @@
+<!--
+sidebar_position: 3
+description: 'Handle two-handed magnify gestures and read the scale factor produced by the interaction.'
+-->
+
 # Spatial Magnify
 
 ## Summary
@@ -6,9 +11,10 @@ Represents a completed two-handed "select, activate, and hold" action on a targe
 
 ## Trigger Conditions
 
-If a [spatialized 2D HTML element](../../../concepts/spatialized-html-elements.md) listens for the Spatial Magnify event series, the series is triggered after the 3D spatial position occupied by its own content is pinched and held.
-
-If a [3D container element](../../../concepts/3d-content-containers.md) listens for the Spatial Magnify event series, the series is triggered after the 3D spatial position occupied by its own interactive content is pinched and held.
+| Target | Triggered when |
+| --- | --- |
+| [Spatialized 2D HTML element](../../../concepts/spatialized-html-elements.md) | After the 3D spatial position occupied by its own content is pinched and held. |
+| [3D container element](../../../concepts/3d-content-containers.md) | After the 3D spatial position occupied by its own interactive content is pinched and held. |
 
 ## Mental Model
 
@@ -16,21 +22,24 @@ The line between the two hands, effectively like a real object, can be stretched
 
 ## Event Type Signature
 
-Event type names:
-
-- `spatialmagnify`
-- `spatialmagnifyend`
+| Stage | DOM event |
+| --- | --- |
+| Magnifying | `spatialmagnify` |
+| Magnify end | `spatialmagnifyend` |
 
 ## React Usage
 
-Event prop names available in JSX:
-
-- `onSpatialMagnify`
-- `onSpatialMagnifyEnd`
+| Stage | JSX prop |
+| --- | --- |
+| Magnifying | `onSpatialMagnify` |
+| Magnify end | `onSpatialMagnifyEnd` |
 
 ## Native DOM Usage
 
-At the current stage, the [WebSpatial SDK](../../../introduction/getting-started.md#webspatial-sdk) does not allow listening to spatial events directly on DOM elements, including those obtained from refs.
+> [!IMPORTANT]
+> **Current limitation**
+>
+> At the current stage, the [WebSpatial SDK](../../../introduction/getting-started.md#webspatial-sdk) does not allow listening to spatial events directly on DOM elements, including those obtained from refs.
 
 ## Event Lifecycle
 
@@ -38,12 +47,13 @@ No event is triggered during the "selection" phase. After pinch-and-hold activat
 
 ## SpatialMagnifyEvent Payload
 
-### `magnification`
-
-The value is a percentage-like number. For example, `1` means the original size and `1.5` means scaled to 150%.
-
-It represents the amount of scaling relative to the initial state.
+| Field | Value | Meaning |
+| --- | --- | --- |
+| `magnification` | A percentage-like number such as `1` (100%) or `1.5` (150%). | The amount of scaling relative to the initial state. |
 
 ## SpatialMagnifyEndEvent Payload
 
-The `SpatialMagnifyEndEvent` object passed to the `spatialmagnifyend` event callback has no extra properties.
+> [!IMPORTANT]
+> **No extra payload**
+>
+> The `SpatialMagnifyEndEvent` object passed to the `spatialmagnifyend` callback has no extra properties.

@@ -1,18 +1,30 @@
+<!--
+sidebar_position: 1
+description: 'Choose whether a new Spatial Scene behaves like a window or a volume.'
+-->
+
 # `type`
 
 During the [initialization phase](../../../concepts/spatial-scenes.md#scene-initialization) of a [Spatial Scene](../../../concepts/spatial-scenes.md), you can set the [scene type](../../../concepts/spatial-scenes.md#scene-type).
 
-## Declared In
+## Availability
 
-For [new Spatial Scenes](../../../concepts/spatial-scenes.md#new-scenes) created in a WebSpatial App, the scene type must be set through the [`initScene`](../js-api/initScene.md) API.
+| Item | Value |
+| --- | --- |
+| Applies to | All Spatial Scenes. |
+| New scenes | Set through [`initScene`](../js-api/initScene.md) before calling `window.open(...)`. |
+| Start scene | Set through the [Web App Manifest](../manifest-options/main-scene.md). |
+| Default value | `"window"` |
 
-For the [Start Scene](../../../concepts/spatial-scenes.md#start-scene), the scene type must be [set through the Web App Manifest](../manifest-options/main-scene.md).
-
-## Type
+## Type Signature
 
 `"window" | "volume"`
 
-Example of setting the type for a new scene through `initScene`:
+## Examples
+
+### Using `initScene`
+
+**Set the type for a new scene**
 
 ```js
 import { initScene } from "@webspatial/react-sdk";
@@ -26,7 +38,9 @@ initScene("newSceneName", defaultConfig => {
 window.open(newSceneUrl, "newSceneName");
 ```
 
-Example of setting the initial scene through the Web App Manifest:
+### Using the Web App Manifest
+
+**Set the type for the start scene**
 
 ```json
 {
@@ -44,5 +58,7 @@ Example of setting the initial scene through the Web App Manifest:
 
 ## Accepted Values
 
-- `"window"`: primarily serves [GUI needs](../../../concepts/spatial-scenes.md#scene-type)
-- `"volume"`: simulates a [real-world object](../../../concepts/spatial-scenes.md#scene-type)
+| Value | Meaning |
+| --- | --- |
+| `"window"` | Primarily serves [GUI needs](../../../concepts/spatial-scenes.md#scene-type). |
+| `"volume"` | Simulates a [real-world object](../../../concepts/spatial-scenes.md#scene-type). |

@@ -1,20 +1,31 @@
+<!--
+sidebar_position: 5
+description: 'Control whether a Spatial Scene stays upright, faces the user, or behaves more like a real object.'
+-->
+
 # `worldAlignment`
 
 One of the [initialization properties](../../../concepts/spatial-scenes.md#scene-initialization) of a [Spatial Scene](../../../concepts/spatial-scenes.md), `worldAlignment` affects how a Spatial Scene behaves when the user drags it vertically after creation.
-
 Only Spatial Scenes of type `volume` support `worldAlignment`.
 
-## Declared In
+## Availability
 
-For [new Spatial Scenes](../../../concepts/spatial-scenes.md#new-scenes) created in a WebSpatial App, initialization properties must be set through the [`initScene`](../js-api/initScene.md) API.
+| Item | Value |
+| --- | --- |
+| Applies to | Only `volume` Spatial Scenes. |
+| New scenes | Set through [`initScene`](../js-api/initScene.md). |
+| Start scene | Set through the [Web App Manifest](../manifest-options/main-scene.md). |
+| Default value | `"automatic"` |
 
-For the [Start Scene](../../../concepts/spatial-scenes.md#start-scene), initialization properties must be [set through the Web App Manifest](../manifest-options/main-scene.md).
-
-## Type
+## Type Signature
 
 `"automatic" | "gravityAligned"`
 
-Example of setting a new scene through `initScene`:
+## Examples
+
+### Using `initScene`
+
+**Set worldAlignment for a new scene**
 
 ```js
 import { initScene } from "@webspatial/react-sdk";
@@ -29,9 +40,14 @@ initScene("newSceneName", defaultConfig => {
 window.open(newSceneUrl, "newSceneName");
 ```
 
-Example of setting the initial scene through the Web App Manifest:
+### Using the Web App Manifest
 
-> Note: In a Web App Manifest, it is recommended to convert property names from camelCase, such as `worldAlignment`, to lowercase snake_case, such as `world_alignment`.
+> [!CAUTION]
+> **Manifest key naming**
+>
+> In a Web App Manifest, convert camelCase keys such as `worldAlignment` to lowercase snake_case such as `world_alignment`.
+
+**Set world_alignment for the start scene**
 
 ```json
 {
@@ -50,5 +66,7 @@ Example of setting the initial scene through the Web App Manifest:
 
 ## Accepted Values
 
-- `"automatic"`: tilts automatically during vertical movement so it always faces the user
-- `"gravityAligned"`: does not tilt automatically during vertical movement and always stays aligned with gravity like a real-world object
+| Value | Meaning |
+| --- | --- |
+| `"automatic"` | Tilts automatically during vertical movement so it always faces the user. |
+| `"gravityAligned"` | Does not tilt automatically during vertical movement and always stays aligned with gravity like a real-world object. |

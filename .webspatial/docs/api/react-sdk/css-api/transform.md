@@ -1,3 +1,8 @@
+<!--
+sidebar_position: 2
+description: 'Apply true 3D translation, rotation, and scale to spatialized HTML elements and 3D containers.'
+-->
+
 # Spatial Transform
 
 ## Summary
@@ -72,6 +77,9 @@ However, like CSS Transform, if a parent spatialized HTML element uses Spatial T
 
 In the current implementation of WebSpatial SDK, Spatial Transform properties are not yet supported inside CSS animations.
 
+> [!CAUTION]
+> **Current limitation**
+>
 > Spatialized HTML elements as a whole do not currently support CSS animations.
 
 Spatial Transform does support JS-based animation approaches, where JS repeatedly updates the Spatial Transform value in an element's `style`.

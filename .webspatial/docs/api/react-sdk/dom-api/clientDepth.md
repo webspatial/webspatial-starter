@@ -1,3 +1,8 @@
+<!--
+sidebar_position: 3
+description: 'Read the current rendered depth of a 3D container element in pixels.'
+-->
+
 # `clientDepth`
 
 ## Summary
@@ -14,7 +19,10 @@ Like `Element.clientWidth`: read-only and unaffected by [CSS Transform](../css-a
 
 ## Syntax
 
-Before standardization is complete, DOM properties in the WebSpatial API need the `xr` prefix and the original first letter becomes uppercase, so `clientDepth` must be written as `xrClientDepth`.
+> [!CAUTION]
+> **Temporary prefixed DOM name**
+>
+> Before standardization is complete, DOM properties in the WebSpatial API need the `xr` prefix and the original first letter becomes uppercase, so `clientDepth` must be written as `xrClientDepth`.
 
 ## Read / Write Semantics
 

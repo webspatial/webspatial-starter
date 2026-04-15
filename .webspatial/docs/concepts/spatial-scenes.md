@@ -1,8 +1,13 @@
+<!--
+sidebar_position: 3
+description: 'Understand Spatial Scene containers, scene types, initialization, and how WebSpatial apps open multiple scenes.'
+-->
+
 # Spatial Scenes
 
-A Spatial Scene, also called a Spatial Container, is the most basic container that a spatial computing operating system provides for [spatial apps](./spatial-computing.md#spatial-app). It is used to enable [unified rendering](./spatial-computing.md#unified-rendering) and provide the [basic capabilities that integrate software with space](./spatial-computing.md#spatial-computing). All content in a spatial app must be provided through this kind of container, just as app content in desktop operating systems is provided through windows.
+A Spatial Scene, also called a Spatial Container, is the most basic container that a spatial computing operating system provides for [spatial apps](./spatial-computing.md#spatial-app). It is used to enable [unified rendering](./spatial-computing.md#unified-rendering) and provide the [basic capabilities that integrate software with space](./spatial-computing.md). All content in a spatial app must be provided through this kind of container, just as app content in desktop operating systems is provided through windows.
 
-For a [WebSpatial App](./webspatial-app.md#webspatial-app), each Spatial Scene is effectively a webpage loaded and run by URL inside an independent "window".
+For a [WebSpatial App](./webspatial-app.md), each Spatial Scene is effectively a webpage loaded and run by URL inside an independent "window".
 A WebSpatial App is composed entirely of these "windows", and all content comes from the HTML/CSS/JS code running inside them.
 
 This kind of "window" does not include browser tabs, an address bar, or similar browser UI. The space is left to the webpage itself. It only provides a [minimal menu similar to a PWA window](https://web.dev/learn/pwa/app-design#standalone_experience), floating above the webpage content and collapsed by default, with essential Web App functions such as "copy current URL" and "open in browser". By default, it also includes navigation buttons such as "Back". If the `display` mode in the Web App Manifest is [set to `standalone`](https://developer.mozilla.org/docs/Web/Progressive_web_apps/Manifest/Reference/display), the navigation buttons are hidden and navigation relies entirely on UI inside the webpage.
@@ -17,8 +22,8 @@ By default, webpage content is located on this 2D plane. The viewport size and w
 
 The backplate of this 2D plane can be set to [fully transparent with no border](../api/react-sdk/css-api/background-material.md), making webpage content look as if it were floating separately in the air. It can also use a native-feeling translucent material, such as a frosted-glass effect on visionOS, rendered dynamically in real time based on viewpoint and environment.
 
-[Spatialized HTML elements](./spatialized-html-elements.md#spatialized-html-elements) can be "lifted" from this 2D plane into the 3D space in front of it, toward the user, and can receive Z-axis [layout](../api/react-sdk/css-api/back.md) and [transforms](../api/react-sdk/css-api/transform.md).
-If the webpage adds [3D content container elements](./3d-content-containers.md#3d-content-containers), volumetric 3D content is also rendered in the space in front of this 2D plane.
+[Spatialized HTML elements](./spatialized-html-elements.md) can be "lifted" from this 2D plane into the 3D space in front of it, toward the user, and can receive Z-axis [layout](../api/react-sdk/css-api/back.md) and [transforms](../api/react-sdk/css-api/transform.md).
+If the webpage adds [3D content container elements](./3d-content-containers.md), volumetric 3D content is also rendered in the space in front of this 2D plane.
 So a `window` Spatial Scene is not just a flat plane and is not limited to pure 2D content. It can also contain spatialized UI and volumetric 3D content.
 
 Spatial Scenes can also be set to the `volume` type. This type no longer prioritizes GUI needs and is instead used to simulate real-world objects.

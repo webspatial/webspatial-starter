@@ -1,14 +1,24 @@
+<!--
+sidebar_position: 3
+description: 'Limit how far users can resize a Spatial Scene after it opens.'
+-->
+
 # `resizability`
 
 One of the [initialization properties](../../../concepts/spatial-scenes.md#scene-initialization) of a [Spatial Scene](../../../concepts/spatial-scenes.md), `resizability` affects the constraints applied when a user drags the Spatial Scene to resize it after creation. It can provide separate min and max constraints for the width and height of the Spatial Scene.
 
-## Declared In
+## Availability
 
-For [new Spatial Scenes](../../../concepts/spatial-scenes.md#new-scenes) created in a WebSpatial App, initialization properties must be set through the [`initScene`](../js-api/initScene.md) API.
+| Item | Value |
+| --- | --- |
+| Applies to | All resizable Spatial Scenes. |
+| New scenes | Set through [`initScene`](../js-api/initScene.md). |
+| Start scene | Set through the [Web App Manifest](../manifest-options/main-scene.md). |
+| Default value | None. |
 
-For the [Start Scene](../../../concepts/spatial-scenes.md#start-scene), initialization properties must be [set through the Web App Manifest](../manifest-options/main-scene.md).
+## Type Signature
 
-## Type
+**resizability type**
 
 ```ts
 {
@@ -19,7 +29,11 @@ For the [Start Scene](../../../concepts/spatial-scenes.md#start-scene), initiali
 }
 ```
 
-Example of setting a new scene through `initScene`:
+## Examples
+
+### Using `initScene`
+
+**Set resizability for a new scene**
 
 ```js
 import { initScene } from "@webspatial/react-sdk";
@@ -39,9 +53,14 @@ initScene("newSceneName", defaultConfig => {
 window.open(newSceneUrl, "newSceneName");
 ```
 
-Example of setting the initial scene through the Web App Manifest:
+### Using the Web App Manifest
 
-> Note: In a Web App Manifest, it is recommended to convert property names from camelCase, such as `minWidth`, to lowercase snake_case, such as `min_width`.
+> [!CAUTION]
+> **Manifest key naming**
+>
+> In a Web App Manifest, convert camelCase keys such as `minWidth` to lowercase snake_case such as `min_width`.
+
+**Set resizability for the start scene**
 
 ```json
 {
@@ -64,7 +83,9 @@ None.
 
 ## Accepted Values
 
-- `minWidth`: a number, with `px` as the default unit, or a string with a unit suffix such as `"100px"` or `"2m"`
-- `minHeight`: a number, with `px` as the default unit, or a string with a unit suffix such as `"100px"` or `"2m"`
-- `maxWidth`: a number, with `px` as the default unit, or a string with a unit suffix such as `"100px"` or `"2m"`
-- `maxHeight`: a number, with `px` as the default unit, or a string with a unit suffix such as `"100px"` or `"2m"`
+| Field | Accepted value |
+| --- | --- |
+| `minWidth` | A number with `px` as the default unit, or a string with a unit suffix such as `"100px"` or `"2m"`. |
+| `minHeight` | A number with `px` as the default unit, or a string with a unit suffix such as `"100px"` or `"2m"`. |
+| `maxWidth` | A number with `px` as the default unit, or a string with a unit suffix such as `"100px"` or `"2m"`. |
+| `maxHeight` | A number with `px` as the default unit, or a string with a unit suffix such as `"100px"` or `"2m"`. |

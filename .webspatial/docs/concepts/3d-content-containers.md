@@ -1,3 +1,8 @@
+<!--
+sidebar_position: 5
+description: 'Explore the 2D containing 3D model, static and dynamic 3D containers, and the local 3D spaces they create.'
+-->
+
 # 3D Content Containers
 
 Existing HTML elements can only display content in 2D planes. Even the WebGL-based `<canvas>` element and the new `<model>` element can only render 3D content inside a flat canvas. From the perspective of [spatial computing](./spatial-computing.md), they are still part of 2D content.

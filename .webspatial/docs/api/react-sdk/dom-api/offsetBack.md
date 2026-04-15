@@ -1,3 +1,8 @@
+<!--
+sidebar_position: 2
+description: 'Read how far a spatialized HTML element has moved forward from its original 2D position.'
+-->
+
 # `offsetBack`
 
 ## Summary
@@ -16,7 +21,10 @@ Like `HTMLElement.offsetHeight`: read-only and unaffected by [CSS Transform](../
 
 ## Syntax
 
-Before standardization is complete, DOM properties in the WebSpatial API need the `xr` prefix and the original first letter becomes uppercase, so `offsetBack` must be written as `xrOffsetBack`.
+> [!CAUTION]
+> **Temporary prefixed DOM name**
+>
+> Before standardization is complete, DOM properties in the WebSpatial API need the `xr` prefix and the original first letter becomes uppercase, so `offsetBack` must be written as `xrOffsetBack`.
 
 ## Read / Write Semantics
 

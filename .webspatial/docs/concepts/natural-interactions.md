@@ -1,3 +1,8 @@
+<!--
+sidebar_position: 6
+description: 'Understand gaze, pinch, touch, and the spatial events WebSpatial exposes for natural interaction.'
+-->
+
 # Natural Interactions
 
 Natural interactions mean that when users interact with software interfaces and virtual content in space, the interaction feels like manipulating real objects in the physical world. No control device such as an XR controller is used. Interaction relies only on hands and eyes in an intuitive and efficient way.
@@ -49,6 +54,6 @@ For that reason, the [Spatial Runtime](./spatial-computing.md#spatial-runtime) d
 | Type                                                             | Event Name                                              | React API                                                     | Event Results                                                          |
 | ---------------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------------- | ---------------------------------------------------------------------- |
 | [Spatial Tap](../api/react-sdk/event-api/spatial-tap.md)         | `spatialtap`                                            | `onSpatialTap`                                                | `SpatialTapEvent`                                                      |
-| [Spatial Drag](../api/react-sdk/event-api/spatial-drag.md)       | `spatialdragstart`<br>`spatialdrag`<br>`spatialdragend` | `onSpatialDragStart`<br>`onSpatialDrag`<br>`onSpatialDragEnd` | `SpatialDragStartEvent`<br>`SpatialDragEvent`<br>`SpatialDragEndEvent` |
-| [Spatial Rotate](../api/react-sdk/event-api/spatial-rotate.md)   | `spatialrotate`<br>`spatialrotateend`                   | `onSpatialRotate`<br>`onSpatialRotateEnd`                     | `SpatialRotateEvent`<br>`SpatialRotateEndEvent`                        |
-| [Spatial Magnify](../api/react-sdk/event-api/spatial-magnify.md) | `spatialmagnify`<br>`spatialmagnifyend`                 | `onSpatialMagnify`<br>`onSpatialMagnifyEnd`                   | `SpatialMagnifyEvent`<br>`SpatialMagnifyEndEvent`                      |
+| [Spatial Drag](../api/react-sdk/event-api/spatial-drag.md)       | `spatialdragstart`<br />`spatialdrag`<br />`spatialdragend` | `onSpatialDragStart`<br />`onSpatialDrag`<br />`onSpatialDragEnd` | `SpatialDragStartEvent`<br />`SpatialDragEvent`<br />`SpatialDragEndEvent` |
+| [Spatial Rotate](../api/react-sdk/event-api/spatial-rotate.md)   | `spatialrotate`<br />`spatialrotateend`                   | `onSpatialRotate`<br />`onSpatialRotateEnd`                     | `SpatialRotateEvent`<br />`SpatialRotateEndEvent`                        |
+| [Spatial Magnify](../api/react-sdk/event-api/spatial-magnify.md) | `spatialmagnify`<br />`spatialmagnifyend`                 | `onSpatialMagnify`<br />`onSpatialMagnifyEnd`                   | `SpatialMagnifyEvent`<br />`SpatialMagnifyEndEvent`                      |

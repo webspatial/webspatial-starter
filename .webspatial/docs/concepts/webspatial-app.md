@@ -1,6 +1,11 @@
+<!--
+sidebar_position: 2
+description: 'See how a standard Web App becomes a WebSpatial App, including the roles of the runtime and packaged app.'
+-->
+
 # WebSpatial App
 
-A [Web App](#web-app) that uses the [WebSpatial API](../introduction/getting-started.md#webspatial-api) becomes a spatial app when it runs as a standalone app on a [spatial computing platform](./spatial-computing.md#spatial-computing) and enables spatial computing capabilities with the help of the [WebSpatial Runtime](#webspatial-runtime). This is called a WebSpatial App.
+A [Web App](#web-app) that uses the [WebSpatial API](../introduction/getting-started.md#webspatial-api) becomes a spatial app when it runs as a standalone app on a [spatial computing platform](./spatial-computing.md) and enables spatial computing capabilities with the help of the [WebSpatial Runtime](#webspatial-runtime). This is called a WebSpatial App.
 
 A WebSpatial App is an enhancement of a standard Web App, and that enhancement is activated only under suitable conditions.
 
@@ -13,7 +18,10 @@ If the same Web App runs independently outside the browser on PICO OS 6 through 
 
 WebXR content can be "contained" inside a WebSpatial App, because a WebSpatial App is still a standard Web App composed of normal webpages. A webpage in the app can start a WebXR session through JS APIs, take over the entire space, and render WebXR content with low-level 3D graphics APIs such as WebGL or WebGPU. But that space is not [Full Space](./spatial-computing.md#spatial-runtime), and it is not [unified rendering](./spatial-computing.md#unified-rendering). Rendering is handled independently by the WebXR code itself. Once a WebXR session starts, the original webpages and spatialized UI of the WebSpatial App are hidden and are not shown at the same time.
 
-> Note: Because WKWebView on visionOS does not currently support WebXR, Packaged WebSpatial Apps on visionOS cannot start a WebXR session for now.
+> [!CAUTION]
+> **Current limitation on visionOS**
+>
+> Because WKWebView on visionOS does not currently support WebXR, Packaged WebSpatial Apps on visionOS cannot start a WebXR session for now.
 
 ## Web App
 
@@ -33,7 +41,7 @@ Safari and WKWebView on visionOS are both Web Runtimes. A [Packaged WebSpatial A
 
 The [Web App Runtime](https://developer.picoxr.com/document/web/web-app/) on PICO OS 6, which includes [WebSpatial Runtime](#webspatial-runtime), is also a kind of Web Runtime and uses the [same Chromium core](https://developer.picoxr.com/document/web/web-platform/) as the PICO browser.
 
-In other words, WebSpatial Runtime is always built into a Web Runtime and is part of that Web Runtime. That is why a [WebSpatial App](#webspatial-app) retains the original capabilities of a [standard Web App](#web-app) and inherits the code and development model of a standard Web App.
+In other words, WebSpatial Runtime is always built into a Web Runtime and is part of that Web Runtime. That is why a [WebSpatial App](./webspatial-app.md) retains the original capabilities of a [standard Web App](#web-app) and inherits the code and development model of a standard Web App.
 
 ## WebSpatial Runtime
 

@@ -1,28 +1,64 @@
+<!--
+sidebar_position: 3
+description: 'Upload a built Packaged WebSpatial App to App Store Connect for TestFlight or App Store submission.'
+-->
+
 # `webspatial-builder publish`
 
 Used to submit a [Packaged WebSpatial App](../../concepts/webspatial-app.md#packaged-webspatial-app) to an app store.
-
 It includes packaging and automatically uploads the app to the store after packaging.
-
 For the visionOS App Store, app information must be [filled in beforehand in App Store Connect](../../how-to/app-store-connect.md#submission-to-the-app-store).
+
+## Quick Reference
+
+| Item | Value |
+| --- | --- |
+| Best for | Publishing a Packaged WebSpatial App to an app store. |
+| Required credentials | `--u`, `--p`, `--version`, `--bundle-id`, and `--teamId` for visionOS. |
+| Does it upload to a store? | Yes, automatically after packaging. |
 
 ## When to Use
 
-When you want to run a [WebSpatial App](../../concepts/webspatial-app.md) on a [spatial computing](../../concepts/spatial-computing.md) platform that does not include [WebSpatial Runtime](../../concepts/webspatial-app.md#webspatial-runtime), such as visionOS.
-
-When you want to [test on many real devices or distribute the app publicly](../../introduction/getting-started.md#distribution).
+- When you want to run a [WebSpatial App](../../concepts/webspatial-app.md) on a [spatial computing](../../concepts/spatial-computing.md) platform that does not include [WebSpatial Runtime](../../concepts/webspatial-app.md#webspatial-runtime), such as visionOS.
+- When you want to [test on many real devices or distribute the app publicly](../../introduction/getting-started.md#distribution).
 
 ## When Not to Use
 
-When you want to run on a [spatial computing](../../concepts/spatial-computing.md) platform that includes [WebSpatial Runtime](../../concepts/webspatial-app.md#webspatial-runtime) and supports running a [WebSpatial App](../../concepts/webspatial-app.md) directly by URL, such as [PICO OS 6](https://developer.picoxr.com/document/web/web-app/).
-
-When you only need to [preview in a simulator](./run.md) or [preview on a personal test device](./build.md).
+- When you want to run on a [spatial computing](../../concepts/spatial-computing.md) platform that includes [WebSpatial Runtime](../../concepts/webspatial-app.md#webspatial-runtime) and supports running a [WebSpatial App](../../concepts/webspatial-app.md) directly by URL, such as [PICO OS 6](https://developer.picoxr.com/document/web/web-app/).
+- When you only need to [preview in a simulator](./run.md) or [preview on a personal test device](./build.md).
 
 ## Syntax
 
-`webspatial-builder publish`
+**Package and upload an app-store build**
 
-`webspatial-builder publish --u=<username> --p=<password> --version=<app version> --bundle-id=<id> --teamId=<id> [--export=<local path>] [--base=<base url>] [--manifest=<local path>] [--manifest-url=<url>] [--project=<dist>]`
+```bash
+webspatial-builder publish \
+  --u=<username> \
+  --p=<password> \
+  --version=<app version> \
+  --bundle-id=<id> \
+  --teamId=<id> \
+  [--export=<local path>] \
+  [--base=<base url>] \
+  [--manifest=<local path>] \
+  [--manifest-url=<url>] \
+  [--project=<dist>]
+```
+
+## Option Overview
+
+| Option | Required | What it controls |
+| --- | --- | --- |
+| `--u` | Yes for visionOS | Provides the Apple developer account email used for upload. |
+| `--p` | Yes for visionOS | Provides the app-specific password for the Apple developer account. |
+| `--version` | Yes for visionOS | Sets the app version uploaded to App Store Connect. |
+| `--teamId` | Yes for visionOS | Identifies the Apple developer team used to sign the build. |
+| `--bundle-id` | Yes for visionOS | Selects the registered Apple app identifier. |
+| `--export` | Optional | Changes the output path of the generated native app bundle. |
+| `--base` | Optional | Provides or overrides the base URL used to resolve `start_url`. |
+| `--manifest` | Optional | Points Builder at a local Web App Manifest file. |
+| `--manifest-url` | Optional | Fetches the manifest directly from a live site URL. |
+| `--project` | Optional | Points Builder at a custom website build output directory. |
 
 ## Options
 
@@ -58,9 +94,10 @@ If WebSpatial Builder does not know the current Web App's `start_url`, the value
 
 If the current Web App's `start_url` obtained by WebSpatial Builder is a [relative URL with no domain part](#--manifest), `--base` can provide the domain and complete the URL.
 
-If `start_url` is complete and usable, the Packaged App built by WebSpatial Builder loads HTML/CSS/JS and other Web files from the network at runtime.
-
-If a complete `start_url` is missing, WebSpatial Builder automatically packages the [website build output](../../concepts/webspatial-app.md#web-build-tool) into the native app bundle, and the app loads website files offline from local files inside the bundle at runtime.
+| Resolution state | Runtime behavior |
+| --- | --- |
+| A complete `start_url` is available | The Packaged App loads HTML/CSS/JS and other Web files from the network at runtime. |
+| A complete `start_url` is missing | WebSpatial Builder packages the [website build output](../../concepts/webspatial-app.md#web-build-tool) into the native app bundle, and the app loads website files offline from local files inside the bundle at runtime. |
 
 If WebSpatial Builder already has the complete `start_url` for the current Web App, `--base` can be used to change the base part of `start_url`.
 

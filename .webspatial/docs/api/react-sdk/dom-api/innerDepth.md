@@ -1,3 +1,8 @@
+<!--
+sidebar_position: 4
+description: 'Read the current depth of a volume Spatial Scene through the DOM interface.'
+-->
+
 # `innerDepth`
 
 ## Summary
@@ -14,7 +19,10 @@ Like `window.innerHeight`: read-only and does not include the height of native w
 
 ## Syntax
 
-Before standardization is complete, DOM properties in the WebSpatial API need the `xr` prefix and the original first letter becomes uppercase, so `innerDepth` must be written as `xrInnerDepth`.
+> [!CAUTION]
+> **Temporary prefixed DOM name**
+>
+> Before standardization is complete, DOM properties in the WebSpatial API need the `xr` prefix and the original first letter becomes uppercase, so `innerDepth` must be written as `xrInnerDepth`.
 
 ## Read / Write Semantics
 

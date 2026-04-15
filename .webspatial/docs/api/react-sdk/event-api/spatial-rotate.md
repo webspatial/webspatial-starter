@@ -1,3 +1,8 @@
+<!--
+sidebar_position: 4
+description: 'Handle two-handed rotate gestures and read the rotation produced in 3D space.'
+-->
+
 # Spatial Rotate
 
 ## Summary
@@ -6,9 +11,10 @@ Represents a completed two-handed "select, activate, and hold" action on a targe
 
 ## Trigger Conditions
 
-If a [spatialized 2D HTML element](../../../concepts/spatialized-html-elements.md) listens for the Spatial Rotate event series, the series is triggered after the 3D spatial position occupied by its own content is pinched and held.
-
-If a [3D container element](../../../concepts/3d-content-containers.md) listens for the Spatial Rotate event series, the series is triggered after the 3D spatial position occupied by its own interactive content is pinched and held.
+| Target | Triggered when |
+| --- | --- |
+| [Spatialized 2D HTML element](../../../concepts/spatialized-html-elements.md) | After the 3D spatial position occupied by its own content is pinched and held. |
+| [3D container element](../../../concepts/3d-content-containers.md) | After the 3D spatial position occupied by its own interactive content is pinched and held. |
 
 ## Mental Model
 
@@ -16,21 +22,24 @@ The line between the two hands, effectively like a real object, can rotate at ar
 
 ## Event Type Signature
 
-Event type names:
-
-- `spatialrotate`
-- `spatialrotateend`
+| Stage | DOM event |
+| --- | --- |
+| Rotating | `spatialrotate` |
+| Rotate end | `spatialrotateend` |
 
 ## React Usage
 
-Event prop names available in JSX:
-
-- `onSpatialRotate`
-- `onSpatialRotateEnd`
+| Stage | JSX prop |
+| --- | --- |
+| Rotating | `onSpatialRotate` |
+| Rotate end | `onSpatialRotateEnd` |
 
 ## Native DOM Usage
 
-At the current stage, the [WebSpatial SDK](../../../introduction/getting-started.md#webspatial-sdk) does not allow listening to spatial events directly on DOM elements, including those obtained from refs.
+> [!IMPORTANT]
+> **Current limitation**
+>
+> At the current stage, the [WebSpatial SDK](../../../introduction/getting-started.md#webspatial-sdk) does not allow listening to spatial events directly on DOM elements, including those obtained from refs.
 
 ## Event Lifecycle
 
@@ -38,12 +47,13 @@ No event is triggered during the "selection" phase. After pinch-and-hold activat
 
 ## SpatialRotateEvent Payload
 
-### `quaternion`
-
-The value is a quaternion.
-
-It represents the amount of rotation relative to the initial state and includes information about the rotation axis.
+| Field | Value | Meaning |
+| --- | --- | --- |
+| `quaternion` | A quaternion. | The amount of rotation relative to the initial state, including the rotation axis. |
 
 ## SpatialRotateEndEvent Payload
 
-The `SpatialRotateEndEvent` object passed to the `spatialrotateend` event callback has no extra properties.
+> [!IMPORTANT]
+> **No extra payload**
+>
+> The `SpatialRotateEndEvent` object passed to the `spatialrotateend` callback has no extra properties.

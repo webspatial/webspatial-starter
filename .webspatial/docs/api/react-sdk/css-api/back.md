@@ -1,3 +1,8 @@
+<!--
+sidebar_position: 1
+description: 'Lift an HTML element along the Z axis and position it in front of the page plane.'
+-->
+
 # `back`
 
 ## Summary
@@ -20,12 +25,16 @@ After this 2D plane is "lifted", its X/Y position in space is still determined b
 
 `back` represents the distance between this 2D plane and what lies "behind" it. Which 2D plane counts as "behind" depends on the value of `position`:
 
-When `back` is used with `position: absolute`, it can be understood as positioning the current element relative to the 2D plane corresponding to the nearest [spatialized HTML element](../../../concepts/spatialized-html-elements.md#spatialized-html-elements) in the parent hierarchy. If there is no spatialized HTML element in the parent hierarchy, it is positioned relative to the 2D plane corresponding to the current webpage.
+When `back` is used with `position: absolute`, it can be understood as positioning the current element relative to the 2D plane corresponding to the nearest [spatialized HTML element](../../../concepts/spatialized-html-elements.md) in the parent hierarchy. If there is no spatialized HTML element in the parent hierarchy, it is positioned relative to the 2D plane corresponding to the current webpage.
 This is equivalent to positioning the current element relative to the 2D plane where the element originally existed.
 
-> This interpretation does not violate existing Web standards:
+> [!IMPORTANT]
+> **Why this still matches existing Web standards**
+>
 > In Web standards, when inset properties are used with `position: absolute` or `position: fixed`, the element is positioned relative to the nearest [containing block](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_display/Containing_block#identifying_the_containing_block) in the parent hierarchy, which can be understood as the nearest element whose `position` is not `static`.
+>
 > Once an HTML element is marked as a spatialized HTML element, it automatically becomes a containing block, effectively as if it had `position: relative`.
+>
 > If there are other parent elements with `position: relative` between the current element and the nearest spatialized HTML element, those parent elements cannot "float" because they are not spatialized HTML elements, so they must remain on the 2D plane of the nearest spatialized HTML element. As a result, the final effect of `back` is still positioning relative to that 2D plane.
 
 When `back` is used with `position: fixed`, the current element is always positioned relative to the [initial containing block](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_display/Containing_block#identifying_the_containing_block), which is the `<html>` element and effectively the 2D plane corresponding to the current webpage, and it does not move with page scrolling.
@@ -34,8 +43,11 @@ When `back` is used with `position: relative`, it can be understood as positioni
 
 ## Syntax
 
-Before standardization is complete, CSS properties in the WebSpatial API need the `-xr-` prefix.
-In the current implementation of WebSpatial SDK, for performance reasons, new CSS APIs are implemented through CSS custom properties, so the property name for `back` must be written as `--xr-back` both in CSS styles and in the `style` attribute.
+> [!CAUTION]
+> **Temporary prefixed CSS name**
+>
+> Before standardization is complete, CSS properties in the WebSpatial API need the `-xr-` prefix.
+> In the current implementation of WebSpatial SDK, for performance reasons, new CSS APIs are implemented through CSS custom properties, so the property name for `back` must be written as `--xr-back` both in CSS styles and in the `style` attribute.
 
 Examples:
 
@@ -117,6 +129,9 @@ However, when used with `position: relative` or `position: absolute`, if a spati
 
 In the current implementation of WebSpatial SDK, `back` is not yet supported inside CSS animations.
 
+> [!CAUTION]
+> **Current limitation**
+>
 > Spatialized HTML elements as a whole do not currently support CSS animations.
 
 `back` does support JS-based animation approaches, where JS repeatedly updates the `--xr-back` value in an element's `style`.

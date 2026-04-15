@@ -1,9 +1,17 @@
+<!--
+sidebar_position: 5
+description: 'Install Xcode, simulators, and visionOS platform components required to run Packaged WebSpatial Apps locally.'
+-->
+
 # How to install Xcode and visionOS-related components
 
-Prerequisite: a Mac computer
+> [!IMPORTANT]
+> **Prerequisite**
+>
+> You need a Mac computer.
 
-Steps:
-
-1. Open the Mac App Store, search for "Xcode", and install it.
-2. On first launch, agree to the license agreement and enter the administrator password. Xcode will automatically install additional components.
-3. In the top menu, click "Xcode" > "Settings". Under the "Components" tab, find visionOS and visionOS Simulator in "Platform Support" and install both.
+| Step | What to do | Why it matters |
+| --- | --- | --- |
+| 1 | Open the Mac App Store, search for `Xcode`, and install it. | This installs the core Apple development environment. |
+| 2 | Launch Xcode once, accept the license agreement, and enter the administrator password if prompted. | Xcode installs additional required components on first launch. |
+| 3 | Open `Xcode > Settings > Components`, then install both `visionOS` and `visionOS Simulator` under `Platform Support`. | These platform packages are required to build and preview visionOS apps. |

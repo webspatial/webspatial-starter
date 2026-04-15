@@ -1,3 +1,8 @@
+<!--
+sidebar_position: 3
+description: 'Render dynamic 3D content inside a spatialized container with the unified-rendering engine API.'
+-->
+
 # `<Reality>`
 
 ## Overview
@@ -98,6 +103,9 @@ The following 3D asset declarations can appear among the top-level children of `
 
 Transform props use the coordinate system of the local 3D space in front of the 2D plane corresponding to `<Reality>` by default, with the origin at the center point of that space. It uses a right-handed coordinate system, with Y pointing upward, Z pointing toward the user, and lengths expressed by default in the physical world unit (`m`) oriented toward real-world objects.
 
+> [!TIP]
+> **Related APIs**
+>
 > The depth of this space can be set with [`depth`](../css-api/depth.md) and the current depth can be queried with [`clientDepth`](../dom-api/clientDepth.md).
 
 For Entity nodes directly under `<World>`, the `position` value in Transform props is relative to the coordinate-system origin. For other Entity nodes used as children, the `position` value in Transform props is relative to the parent Entity's `position`.
@@ -233,6 +241,9 @@ useEffect(() => {
 
 `<AttachmentEntity>` is an Entity similar to `<Plane>`. It can reference [predeclared 2D HTML/CSS content](#3d-assets) and attach that content onto its own surface.
 
+> [!CAUTION]
+> **Current limitation**
+>
 > In a later version of WebSpatial SDK, `<AttachmentEntity>` will support `width` and `height` like `<Plane>` does, which it does not currently support, and full [Transform props](#3d-entity), whereas the current version only supports `position`. For now, you need to use the `size` prop to set the size, with the same `px` unit used by 2D content.
 
 ```js
